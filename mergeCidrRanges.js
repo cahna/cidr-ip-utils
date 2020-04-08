@@ -25,7 +25,7 @@ function mergeCidrRanges(cidrStrings) {
     let previous = ipRanges[0];
     const merged = [previous];
 
-    for (var current of ipRanges) {
+    for (const current of ipRanges) {
         if (current.startInt <= previous.endInt + 1) {
             if (previous.endInt + 1 <= current.endInt) {
                 previous.end = current.end;
