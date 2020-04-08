@@ -20,7 +20,7 @@ function mergeCidrRanges(cidrStrings) {
             end,
             endInt: ipToInt(end.address),
         }));
-    ipRanges.sort((a, b) => a.startInt - b.endInt);
+    ipRanges.sort((a, b) => a.startInt - b.startInt);
 
     let previous = ipRanges[0];
     const merged = [previous];
