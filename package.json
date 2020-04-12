@@ -1,9 +1,8 @@
 {
   "name": "cidr-ip-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utils for working with CIDR notation",
   "main": "dist/index.js",
-  "type": "module",
   "scripts": {
     "build": "webpack --config ./webpack.config.js --mode=production",
     "test": "mocha -r esm"

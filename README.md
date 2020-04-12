@@ -1,10 +1,12 @@
 # cidr-ip-tools
 
+![cidr-ip-utils](https://github.com/cahna/cidr-ip-utils/workflows/cidr-ip-utils/badge.svg)
+
 Utilities for converting, sorting, and merging CIDR notation into IP ranges.
 
 ## API
 
-See [`test/index.js`](https://github.com/cahna/cidr-ip-utils/test/index.js) for more examples.
+See [`test/index.js`](https://github.com/cahna/cidr-ip-utils/blob/master/test/index.js) for more examples.
 
 ### `mergeCidrRanges(cidrStrings)`
 
