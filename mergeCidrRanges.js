@@ -3,7 +3,7 @@ const { Address4 } = require('ip-address');
 function ipToInt(ipString) {
     return ipString.split('.')
         .map(str => parseInt(str, 10))
-        .map((octet, i) => (octet ? octet * Math.pow(256, 3 - i) : 0))
+        .map((octet, i) => (octet ? octet * 256 ** (3 - i) : 0))
         .reduce((a, b) => (a + b));
 }
 
