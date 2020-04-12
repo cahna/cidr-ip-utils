@@ -1,0 +1,39 @@
+{
+  "name": "cidr-ip-utils",
+  "version": "0.0.1",
+  "description": "Utils for working with CIDR notation",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "webpack --config ./webpack.config.js --mode=production",
+    "test": "mocha -r esm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cahna/cidr-ip-utils.git"
+  },
+  "keywords": [
+    "cidr"
+  ],
+  "author": "Conor Heine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cahna/cidr-ip-utils/issues"
+  },
+  "homepage": "https://github.com/cahna/cidr-ip-utils#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
+    "esm": "^3.2.25",
+    "mocha": "^7.1.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "ip-address": "^6.3.0"
+  }
+}
