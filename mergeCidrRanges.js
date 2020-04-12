@@ -2,7 +2,7 @@ const { Address4 } = require('ip-address');
 
 function ipToInt(ipString) {
     return ipString.split('.')
-        .map(str => parseInt(str))
+        .map(str => parseInt(str, 10))
         .map((octet, i) => (octet ? octet * Math.pow(256, 3 - i) : 0))
         .reduce((a, b) => (a + b));
 }
@@ -83,6 +83,14 @@ assert.deepEqual(mergeCidrRanges([
     { start: '0.0.0.0', end: '0.0.255.255' },
     { start: '10.0.0.3', end: '10.0.0.15' },
     { start: '10.0.2.0', end: '10.0.3.255' }
+]);
+
+assert.deepEqual(mergeCidrRanges([
+  '10.0.0.3/32',
+  '208.0.0.0/7',
+]), [
+  { start: '10.0.0.3', end: '10.0.0.3' },
+  { start: '208.0.0.0', end: '209.255.255.255' },
 ]);
 
 assert.deepEqual(mergeCidrRanges([
