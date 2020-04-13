@@ -1,6 +1,6 @@
 {
   "name": "cidr-ip-utils",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Utils for working with CIDR notation",
   "main": "dist/index.js",
   "scripts": {
