@@ -1,8 +1,9 @@
-# cidr-ip-tools
+# cidr-ip-utils
 
 ![cidr-ip-utils](https://github.com/cahna/cidr-ip-utils/workflows/cidr-ip-utils/badge.svg)
 
-Utilities for converting, sorting, and merging CIDR notation into IP ranges.
+Utilities for translating, merging, and sorting CIDR notation into IP ranges. **IPv4 ONLY**.
+Support for Node.js and browser environments.
 
 ## API
 
@@ -13,7 +14,8 @@ See [`test/index.js`](https://github.com/cahna/cidr-ip-utils/blob/master/test/in
 Merge and sort a list of CIDR strings into a list of IPv4 ranges.
 
 ```javascript
-import { mergeCidrRanges } from 'cidr-ip-tools';
+import { mergeCidrRanges } from 'cidr-ip-utils';
+# or const { mergeCidrRange } = require('cidr-ip-utils');
 
 assert.deepEqual(mergeCidrRanges([
   '10.0.0.3/32',
@@ -33,7 +35,7 @@ assert.deepEqual(mergeCidrRanges([
 Useful for comparing IP addresses.
 
 ```javascript
-import { ip4ToInt } from 'cidr-ip-tools';
+import { ip4ToInt } from 'cidr-ip-utils';
 
 assert.equal(ip4ToInt('192.168.1.1'), 3232235777);
 ```
@@ -43,7 +45,7 @@ assert.equal(ip4ToInt('192.168.1.1'), 3232235777);
 Comparator to sort IP strings with Array.sort().
 
 ```javascript
-import { compareIp4 } from 'cidr-ip-tools';
+import { compareIp4 } from 'cidr-ip-utils';
 
 const ips = [
   '127.0.0.1',

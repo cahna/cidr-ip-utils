@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { mergeCidrRanges, compareIp4, ip4ToInt } from '../src/index';
+import { mergeCidrToIp4, compareIp4, ip4ToInt } from '../src/index';
 
 describe('ip4ToInt', () => {
   [
@@ -32,7 +32,7 @@ describe('compareIp4', () => {
   });
 });
 
-describe('mergeCidrRanges', () => {
+describe('mergeCidrToIp4', () => {
   describe('one input range', () => {
     [
       {
@@ -53,7 +53,7 @@ describe('mergeCidrRanges', () => {
       },
     ].forEach(({ input, expected }) => {
       it(`returns expected start/end for: ${input}`, () => {
-        expect(mergeCidrRanges(input)).to.deep.equal(expected);
+        expect(mergeCidrToIp4(input)).to.deep.equal(expected);
       });
     });
   });
@@ -85,12 +85,12 @@ describe('mergeCidrRanges', () => {
         },
       ].forEach(({ input, expected }, index) => {
         it(`returns expected ip ranges [${index}]`, () => {
-          expect(mergeCidrRanges(input)).to.deep.equal(expected);
+          expect(mergeCidrToIp4(input)).to.deep.equal(expected);
         });
       });
 
       it('sorts the returned ip ranges', () => {
-        expect(mergeCidrRanges([
+        expect(mergeCidrToIp4([
           '192.168.0.0/16',
           '203.0.113.0/24',
           '127.0.0.0/8',
@@ -180,7 +180,7 @@ describe('mergeCidrRanges', () => {
         },
       ].forEach(({ input, expected }, index) => {
         it(`returns sorted & merged ip ranges [${index}]`, () => {
-          expect(mergeCidrRanges(input)).to.deep.equal(expected);
+          expect(mergeCidrToIp4(input)).to.deep.equal(expected);
         });
       });
     });

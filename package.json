@@ -1,6 +1,6 @@
 {
   "name": "cidr-ip-utils",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Utils for working with CIDR notation",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,12 @@
     "url": "git+https://github.com/cahna/cidr-ip-utils.git"
   },
   "keywords": [
-    "cidr"
+    "cidr",
+    "ip",
+    "ipv4",
+    "network",
+    "merge",
+    "sort"
   ],
   "author": "Conor Heine",
   "license": "MIT",
