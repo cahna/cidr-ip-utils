@@ -10,9 +10,23 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+          registry-url: https://registry.npmjs.org/
+      - name: Configure git
+        run : |
+          git config user.email "noreply+actions@github.com"
+          git config user.name "Github Actions"
+
       - run: npm install
-      - run: npm run build
-      - run: npm publish
+
+      - name: Build dist
+        run: npm run build
+
+      - name: Test before publish
+        run: npm test
+
+      - name: Publish dist
+        run: npm publish --access public
         env:
+          CI: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
