@@ -7,7 +7,7 @@ export const ip4ToInt = ipString => ipString.split('.')
 
 export const compareIp4 = (ipA, ipB) => ip4ToInt(ipA) - ip4ToInt(ipB);
 
-export function mergeCidrRanges(cidrStrings) {
+export function mergeCidrToIp4(cidrStrings) {
   const ipRanges = cidrStrings
     .map(s => new Address4(s))
     .map(ip => ({
